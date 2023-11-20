@@ -1,9 +1,8 @@
 {
   "index": "Introduction",
-  "working-with-modals": "Working with modals",
-  "declarative-actions": "Declarative actions",
+  "configurable-workspaces": "Configurable workspaces",
   "custom-component-development": "Custom component development",
-  "debugging": "Debugging",
+  "ui-builder": "UI Builder",
   "about": {
     "title": "About",
     "type": "page"
