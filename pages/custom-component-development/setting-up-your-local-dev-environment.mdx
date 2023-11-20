@@ -1,0 +1,207 @@
+---
+slug: setting-up-local-environment-now-experience-custom-component-development
+date: '2023-02-21'
+title: 'Setting up your local dev environment'
+description: 'In this tutorial you will learn how to set up your local environment for development of custom Now Experience / UI Builder components'
+tags: 'servicenow'
+published: true
+category: 'technical'
+---
+
+import YouTube from '@components/youtube'
+
+<YouTube id="QjUk1HnZwp4" />
+
+Developing custom Now Experience components requires more tooling than conventional ServiceNow development. You'll need to install some software locally onto your Mac, PC or linux computer. The official docs might not get you all the way. This is a step by step guide starting from scratch and ending by deploying your first custom Next component to your instance.
+
+## Prerequisites
+
+-   A Service-Now instance ([learn how to request one here](https://developer.servicenow.com/dev.do#!/learn/learning-plans/rome/new_to_servicenow/app_store_learnv2_buildmyfirstapp_rome_personal_developer_instances))
+-   Admin privileges on your machine (you'll need to install software)
+
+## Step 1: Install VS Code
+
+You'll need an IDE (Integrated Development Environment). Microsoft maintains a fantastic and popular open source IDE called VS Code. I recommend downloading and installing it from [here](https://code.visualstudio.com/download).
+
+VS Code also comes with a convenient terminal window. For any of the subsequent instructions where you need to type in a command you can do it from VS Code terminal. If it's not open already you can go on the top menu **Terminal > New Terminal** to open a new terminal window.
+
+## Step 2: Install NVM
+
+To run the tooling we need to develop custom Next components, we need to install and use Node.js v14. As of this writing the most recent version of Node is 18.14. That is to say we need to use an older version of Node.js to make things work.
+
+Luckily there is a tool that can help us install an older version of Node.js as well as switching between older and newer versions. Meet Node Version Manager (NVM). Below you'll find platform-specific instructions on how to install and use NVM.
+
+### OSX
+
+On a Mac you'll need to install Homebrew ([instructions here](https://collabnix.com/how-to-install-and-configure-nvm-on-mac-os/)) and type the following command in your terminal:
+
+```shell
+brew install nvm
+```
+
+Add nvm to your shell profile:
+
+```shell
+source $(brew --prefix nvm)/nvm.sh
+```
+
+Install Node v14:
+
+```shell
+nvm install 14
+```
+
+Use the installed version:
+
+```shell
+nvm use 14
+```
+
+Confirm it's working:
+
+```shell
+node --version # returns v14.21.3
+```
+
+## Step 3. Download and install the ServiceNow CLI.
+
+CLI stands for Command Line Interface and this is simply a tool that let's you interface with a ServiceNow instance through the command line. The official docs tell you to install it from the [ServiceNow Store](https://store.servicenow.com/sn_appstore_store.do#!/store/home), but somehow this was giving me issues. I recommend installing it through npm by typing this into your terminal:
+
+```shell
+npm i -g @servicenow/cli
+```
+
+## Step 4. Install the `ui-component` extension using the ServiceNow CLI
+
+This is an extension for the ServiceNow CLI ([official docs](https://developer.servicenow.com/dev.do#!/reference/next-experience/rome/cli/cli)) and it allows us to create new UI Components with certain presets as well as deploying them to our ServiceNow instance. After downloading and installing the ServiceNow CLI (SNC for short) you can open a terminal window and type in the following:
+
+```shell
+snc extension add --name ui-component
+```
+
+This should download and install the `ui-component` extension. Once it's finished you can type the following command to confirm it's installed and functioning correctly.
+
+```shell
+snc ui-component --help
+```
+
+## Step 5: Install the CLI Metadata application on your instance
+
+1. Visit the [ServiceNow Store](https://store.servicenow.com) and search for CLI Metadata. Then enable it for your instances.
+
+![](../images/20230217102210.png)
+
+2. On your instance navigate to **System Definitions > Plugins**. You'll be redirected to an overview of All Applications.
+
+3. Here search for CLI Metadata. Select it and install it.
+
+![](../images/20230217102441.png)
+
+## Step 6: Set up a named connection profile
+
+The [official docs](https://docs.servicenow.com/bundle/sandiego-application-development/page/build/servicenow-cli/task/configure-profile.html) guide you towards creating a default connection profile, but as of this writing this doesn't seem to work. An effective workaround is setting up a _named_ connection profile as follows:
+
+In your command-line tool enter the following to set up a default connection profile:
+
+```shell
+snc configure profile set --profile <replace-with-your-profile-name>
+```
+
+You'll be prompted for your instance URL and login details.
+
+For testing purposes you can pick Login Method: Basic and Default Output Format: JSON.
+
+The profile setup is saved to a config file in your home directory:
+
+```shell
+ ~/.snc/config.json # Linux / Mac
+%USERPROFILE%\.snc\config.json # Windows
+```
+
+## Step 7: Set up the project
+
+To scaffold a project do the following:
+
+```shell
+snc ui-component project --profile <your-named-connection-profile> --name @myorg/movie-quotes --description 'A web component that prints movie quotes.'
+```
+
+This scaffolds a project and creates a list of dependencies. To install those dependencies type the following in the terminal:
+
+```shell
+npm install
+```
+
+### Step 8: (Optional) fix issues
+
+In my case running `npm install` threw various errors. Run the following commands to see if they get rid of any errors you might be experiencing.
+
+### Windows
+
+Install windows build tools to make sure you've got the required Python 2.7
+
+```shell
+npm install --global --production windows-build-tools
+```
+
+### Mac
+
+Older versions of OSX will have Python 2.7 installed. Newer versions will need to install it. This is how you can accomplish that ^[2].
+
+```shell
+brew install pyenv
+pyenv install 2.7.18
+pyenv global 2.7.18
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+```
+
+If you're running an M1 or M2 Mac then `brew` will probably not work for you. You need to follow [some additional steps](https://stackoverflow.com/questions/64882584/how-to-run-the-homebrew-installer-under-rosetta-2-on-m1-macbook). Then prefix your commands like this:
+
+```shell
+arch -x86_64 brew install pyenv
+arch -x86_64 pyenv install 2.7.18
+arch -x86_64 pyenv global 2.7.18
+export PATH="${HOME}/.pyenv/shims:${PATH}"
+```
+
+`node-gyp` is a tool that enables the compilation of native add-on modules for Node in multiple platforms. Somewhere in the dependency tree it appears to be included, so we need to make sure it's installed [^3]. Run this inside your project directory.
+
+```shell
+npm install -g node-gyp
+```
+
+Node-SASS seems to be a deprecated version of SASS used by the Now Experience framework. Make sure you're running Node 14 and install the legacy version of Node-SASS [^1]. Run in this inside your project directory.
+
+```shell
+npm install node-sass@4.14
+```
+
+## Step 9: Run the component locally
+
+Now we're ready to run the component locally. Here's a [link](https://docs.servicenow.com/bundle/tokyo-application-development/page/build/components/task/develop-component.html) to the official docs.
+
+```shell
+snc ui-component develop
+```
+
+## Step 10: Deploy the component to your instance
+
+Once you're ready to deploy your component you can do so as follows:
+
+```shell
+snc ui-component deploy
+```
+
+Then navigate to your instance, open UI Builder, open the Component selection dialog and your component should be among those listed.
+
+![](../images/20230221184006.png)
+
+[^1]: https://stackoverflow.com/questions/74501317/whats-the-fix-for-error-node-sass-version-8-0-0-is-incompatible-with-4-0-0
+[^2]: https://github.com/TryGhost/node-sqlite3/issues/1552#issuecomment-1075059490
+[^3]: https://stackoverflow.com/questions/54059433/after-npm-install-an-error-about-a-syntax-error-in-python-appears
+
+## Additional resources
+
+-   https://www.servicenow.com/community/next-experience-forum/setting-up-the-servicenow-cli-snc-cli-for-custom-component/m-p/2392097
+-   [Walkthrough of some example components from ServiceNow](https://developer.servicenow.com/dev.do#!/reference/next-experience/sandiego/ui-framework/examples/counter)
+-   [CLI Troubleshooting Thread on SN Forums](https://www.servicenow.com/community/developer-articles/now-cli-troubleshooting/ta-p/2322948)

@@ -1,7 +1,9 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "working-with-modals": "Working with modals",
+  "declarative-actions": "Declarative actions",
+  "custom-component-development": "Custom component development",
+  "debugging": "Debugging",
   "about": {
     "title": "About",
     "type": "page"
