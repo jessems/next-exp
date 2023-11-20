@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
 	project: {
 		link: 'https://github.com/jessems/next-exp'
 	},
-	docsRepositoryBase: 'https://github.com/jessems/next-exp',
+	docsRepositoryBase: 'https://github.com/jessems/next-exp/tree/main/',
 	footer: {
 		text: 'Unofficial Next Experience Documentation'
 	}
