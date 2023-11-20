@@ -14,7 +14,7 @@ import YouTube from '@components/youtube';
 
 This is a tutorial for building a checklist component using ServiceNow's Next Experience UI framework.
 
-![](../../images/20230624082917.png)
+![](/assets/20230624082917.png)
 
 The code for the checklist comes from ServiceNow themselves. They have an [official tutorial](https://developer.servicenow.com/dev.do#!/reference/next-experience/utah/ui-framework/examples/checklist) — of sorts — for this component, but I found it to be a bit skimpy on the details. I'm writing this tutorial to fill in the gaps and to help me understand the component better.
 
@@ -40,7 +40,7 @@ We want to start off by building a check list item component. The overall check 
 
 It should look something like this:
 
-![](../../images/20230408100031.png)
+![](/assets/20230408100031.png)
 
 We will use some of ServiceNow's out-of-box components like [now-toggle](https://developer.servicenow.com/dev.do#!/reference/next-experience/utah/now-components/now-toggle/overview) and [now-button](https://developer.servicenow.com/dev.do#!/reference/next-experience/utah/now-components/now-button-iconic/overview).
 
@@ -87,7 +87,7 @@ const view = (state, { updateState }) => {
 
 This should give us something like this:
 
-![](../../images/20230409105613.png)
+![](/assets/20230409105613.png)
 
 The iconic button is clickable out of the box, but I like to make sure things work before I move on. So let's add an [action handler](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/main-concepts/action-handlers) to our `createCustomElement` call and console log something when the button is clicked.
 
@@ -111,7 +111,7 @@ This should result in `I've been clicked` getting logged into the browser consol
 
 If we then drill down into `action.[[Target]].payload` we can see the test object we added to the payload. Later we'll be able to use this for sending along an ID.
 
-![](../../images/20230409120653.png)
+![](/assets/20230409120653.png)
 
 ## Step 2: Configuring the view function
 
@@ -290,7 +290,7 @@ const inputCell = (
 
 This gives us the following result:
 
-![](../../images/20230409140115.gif)
+![](/assets/20230409140115.gif)
 
 ## Step 4: Listening for keyboard keys
 
@@ -323,7 +323,7 @@ const inputCell = (
 
 And here's what the result looks like:
 
-![](../../images/20230623082504.gif)
+![](/assets/20230623082504.gif)
 
 There's one more little improvement that I would like to make before we continue.
 
@@ -416,7 +416,7 @@ return (
 
 The result should look like this:
 
-![](../../images/20230623134642.gif)
+![](/assets/20230623134642.gif)
 
 ## Step 6: Directory structure
 
@@ -712,7 +712,7 @@ import styles from './checklist-item.scss';
 
 The result should look like this:
 
-![Checklist item with styles](../../images/20230704062423.gif)
+![Checklist item with styles](/assets/20230704062423.gif)
 
 The hash for this commit is 269e20fa333e970b87c86cfc9e51bfc032d601ae
 
@@ -788,7 +788,7 @@ The commit hash for this step is a56b25ba6eed3e83d884b07523a57e0306d44ac6
 
 Let's have a quick look at the blueprint of what we're building.
 
-![Blueprint of what we're building](../../images/20230705061227.png)
+![Blueprint of what we're building](/assets/20230705061227.png)
 
 We're going to have a checklist component which will contain a header, a search input (to filter the checklist items), the list of checklist-items and a footer with some calculated values and buttons.
 

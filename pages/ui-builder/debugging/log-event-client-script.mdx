@@ -64,7 +64,7 @@ function handler({ api, event, helpers, imports }) {
 
 All this script does is log the entire event object. Then you can view the object in the browser console to see what structure it has.
 
-![Viewing the logged event structure in the browser console](./../images/20230213180338.png)
+![Viewing the logged event structure in the browser console](/assets/20230213180338.png)
 
 ## Tip 2: Creating a Log State button
 
@@ -91,6 +91,6 @@ Then create a new Button component and map the "Button clicked" event to the Pag
 
 The result is a Proxy object which gets logged to the console. We can navigate down into the `[[Target]]` key to reveal the state object in its entirety.
 
-![Logging the state object](./../images/20230213180755.png)
+![Logging the state object](/assets/20230213180755.png)
 
 You can even choose to make the visibility of the "Log state" button conditional on a specific role by creating an audience for it. But that's for another blog post.

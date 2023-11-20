@@ -31,34 +31,34 @@ UI Builder ships with an out-of-box Data Transform for internal REST API request
 3. Provide a name and the REST endpoint and configure additional settings if necessary
 4. Click "Submit" to save
 
-![](../images/20230130152119.png)
+![](/assets/20230130152119.png)
 
 5. Navigate back to your newly created REST Message record (if ServiceNow redirected you)
 6. Navigate to the bottom of the record and open the "Default GET" HTTP Methods record that was created automatically
 
-![](../images/20230130152304.png)
+![](/assets/20230130152304.png)
 
 In the "Default GET" record you can scroll down to the "Related Links" section. Here you can "Test" the REST call and make sure your settings are correct.
 
-![](../images/20230130152532.png)
+![](/assets/20230130152532.png)
 
 ## Step 2: Create a new Transform Data Resource
 
-![](../images/20230130144739.png)
+![](/assets/20230130144739.png)
 
 1. Click on "Data" in the left side-bar to open the Data Resources pane.
 2. Click + Add to add a Data Resource
 3. Click + New to create a new Data Resource
 4. Select Transform from the dropdown list
 
-![](../images/20230130145738.png)
+![](/assets/20230130145738.png)
 
 5. Give the new Data Transform (`sys_ux_data_broker_transform`) a name and leave the Script section empty for now.
 6. Click Submit or open the Context Menu and click Save
 
 Back in UI Builder you should get a warning that "Data resources have changed outside of UIB".
 
-![](../images/20230130150545.png)
+![](/assets/20230130150545.png)
 
 7. Click "Update page" to reload the Data Resources
 
@@ -72,13 +72,13 @@ Your newly created Transform Data Resource should appear in the results.
 
 11. Select your Transform and click Add
 
-![](../images/20230130151106.png)
+![](/assets/20230130151106.png)
 
 We now have a Transform Data Resource, which is a record with a Script field which allows us to run server-side scripts. We'll use this to invoke the external API using a the Rest Message record we set up in step 1.
 
 12. Navigate to your the REST Message (`sys_rest_message`) record you created in Step 1. Once you've confirmed the correct settings click "Preview Script Usage" from the "Related Links" section on the "Default GET" HTTP Method record. This will pop up some boilerplate code for you to invoke the REST call you just configured.
 
-![](../images/20230130152609.png)
+![](/assets/20230130152609.png)
 
 At this point you can choose to copy the boilerplate code over into Background Scripts to test and tweak it to your liking.
 
@@ -145,7 +145,7 @@ function transform(input) {
 
 13. After saving you'll get a notification inside UI Builder notifying you that you don't have permission to execute this data resource.
 
-![](../images/20230205121932.png)
+![](/assets/20230205121932.png)
 
 This is kind of weird behavior from ServiceNow, but it's expected behavior. What you need to do is to create an ACL for the Transform Data Resource.
 
@@ -157,11 +157,11 @@ This is kind of weird behavior from ServiceNow, but it's expected behavior. What
 
 17. For "Type" select `ux_data_broker` and for Operation select `execute`. For the "Name" field paste in the Sys ID of the Transform Data Record you created earlier. Finally click Submit to save the record and click on Elevate Role again to revert to normal access.
 
-![](../images/20230205132724.png)
+![](/assets/20230205132724.png)
 
 Now our Transform Data Resource, when executed, will invoke the REST Message and return the parsed result. You can verify this by reloading UI Builder and clicking on your Transform Data Resource. It should show you a preview of the response in the right pane.
 
-![](../images/20230205133342.png)
+![](/assets/20230205133342.png)
 
 All that's left now is to bind that response to a component in our UI.
 
@@ -171,7 +171,7 @@ All that's left now is to bind that response to a component in our UI.
 
 2. Still in the Configuration Pane hover over the "Label" field for the three icons to appear (Static, Bind data, Use script). Choose "Bind data". Then dot walk starting from the `@data` object into the output of your Transform Data Resource. Finally you'll see the output appear in the Header component (the text "limber" in this case).
 
-![](../images/20230205133942.png)
+![](/assets/20230205133942.png)
 
 ## Final notes
 
