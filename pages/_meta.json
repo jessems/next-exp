@@ -1,8 +1,8 @@
 {
   "index": "Introduction",
   "configurable-workspaces": "Configurable workspaces",
-  "custom-component-development": "Custom component development",
   "ui-builder": "UI Builder",
+  "custom-component-development": "Custom component development",
   "about": {
     "title": "About",
     "type": "page"

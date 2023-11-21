@@ -1,0 +1,6 @@
+{
+    "MarkdownPaste.path": "${workspaceRoot}/public/assets",
+    "editor.rulers": [80],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+}
