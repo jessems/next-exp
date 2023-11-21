@@ -1,7 +1,7 @@
 {
-  "name": "unofficial-next-experience-docs",
+  "name": "jesses-next-experience-docs",
   "version": "0.0.1",
-  "description": "Unofficial Next Experience Docs by Jesse",
+  "description": "Jesse's Next Experience Docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
