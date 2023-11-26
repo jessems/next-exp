@@ -2,7 +2,7 @@ import React from 'react';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
-	logo: <span>Jesse's Next Experience Docs</span>,
+	logo: <span>Unofficial Next Experience Docs</span>,
 	project: {
 		link: 'https://github.com/jessems/next-exp'
 	},

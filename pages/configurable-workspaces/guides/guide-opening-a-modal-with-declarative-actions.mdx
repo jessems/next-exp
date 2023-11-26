@@ -8,32 +8,33 @@ published: true
 category: 'technical'
 ---
 
+import { Callout } from 'nextra/components'
+
 # Opening a modal with declarative actions
 
-## Prerequisites
+In this guide, we will cover how you can make a UI Action Bar button open a modal in a Configurable Workspace. For this guide, we will be using the Service Operations Workspace.
 
-1. If you're on a developer instance and you want to follow along, make sure you install CSM and/or FSM/CSM plugins. You can do so by going to **System Definition > Plugins** in the menu and searching for "CSM".
-   ![](/assets/20230310151204.png)
-2. This tutorial assumes you already have a button configured inside Configurable Workspaces. If not, you can follow the preceding tutorial to do so [here](/adding-an-action-bar-button-to-a-configurable-workspace).
+This article can be seen as part of the following series:
+
+1. [How to add a button to the UI Bar of a configurable workspace](./guide-adding-a-button-to-the-ui-action-bar.mdx)
+2. How to make that button open a modal (this article)
+3. [How to pass variables into a modal](./guide-passing-variables-into-a-modal.mdx)
+
+<Callout type="warning" emoji="⚠️">
+This tutorial assumes you already have a button configured inside Configurable Workspaces. If not, you can follow the preceding tutorial to do so [here](./guide-adding-a-button-to-the-ui-action-bar.mdx).
+</Callout>
 
 ## Step 1: Create a Page & Variant in UI Builder
 
 1. In the Application Navigator navigate to **Now Experience Framework > UI Builder** to open UI Builder.
-2. On the UI Builder Home Screen under Experiences find and click on the CSM/FSM Configurable Workspace experience.
-   ![](/assets/20230324144952.png)
-3. Click on the + button next to Pages and variants.
-   ![](/assets/20230324145615.png)
+2. On the UI Builder Home Screen under **Experiences** find and click on the Service Operations Workspace. Typically it's on page 2. ![](../../../public/assets/20231126195545.png)
+3. Click on the + button next to Pages and variants to create a new Page & Variant. ![](../../../public/assets/20231126195705.png)
 4. Click on "Create a new page" when asked to choose between creating a new page and creating a new variant.
-5. On the template selection screen click on the button on the top right "Create from scratch instead".
-   ![](/assets/20230324145834.png)
-6. Set the Page name to "Crazy Page", this should autofill the URL path as "crazy-page". Finally click continue to proceed. Note: The URL path is what we need when defining the mapping between our button and the modal.
-   ![](/assets/20230324145956.png)
-7. On the next screen add two URL Parameters for our page. One called `sysId` and one called `table`. We'll use these to pass the `sys_id` of the record and the name of the table. Finally click "Looks good" to proceed.
-   ![](/assets/20230324150145.png)
-8. On the next screen ("Tell us about your variant") give your Variant a name. This will be what shows up in the Page overview. Let's call our variant "Crazy Variant" Leave the rest as is.
-   ![](/assets/20230324194849.png)
-9. Our new Page & Variant should now show up in the overview of Pages. Click on it to open it in UI Builder. Note: Keep this tab open. As of this writing there is a weird bug in Servicenow that causes this Variant Collection to disappear from the overview once you fill in one of the fields in the next section)
-   ![](/assets/20230324195100.png)
+5. On the template selection screen click on the button on the top right **Create from scratch instead**. ![](../../../public/assets/20231126195808.png)
+6. Set the Page name to "Our Page", this should autofill the URL path as "our-page". Finally click continue to proceed. Note: The URL path is what we need when defining the mapping between our button and the modal. ![](../../../public/assets/20231126195916.png)
+7. On the next screen add two URL Parameters for our page. One called `sysId` and one called `table`. We'll use these to pass the `sys_id` of the record and the name of the table. Finally click "Looks good" to proceed. ![](../../../public/assets/20231126200045.png)
+8. On the next screen ("Tell us about your variant") give your Variant a name. This will be what shows up in the Page overview. Let's call our variant "Our Variant" Leave the rest as is.![](../../../public/assets/20231126200202.png)
+9. Our new Page & Variant should now show up in the overview of Pages. There should also be a green info message at the top of your screen with a link to editing the page. Click on either one to open the page in UI Builder.
 
 ## Step 2: Design your Variant
 

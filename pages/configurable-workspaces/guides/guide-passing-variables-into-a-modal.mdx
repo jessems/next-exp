@@ -4,13 +4,13 @@ title: Passing variables into a modal
 
 # Passing variables into a modal
 
-This article can be see as a follow up to my previous two guides.
+This article can be seen as part of the following series:
 
-I wrote one tutorial on [how to add a button to the UI Bar](/configurable-workspaces/declarative-actions/ui-action-bar) of a configurable workspace.
+1. [How to add a button to the UI Bar of a configurable workspace](./guide-adding-a-button-to-the-ui-action-bar.mdx)
+2. [How to make that button open a modal](./guide-opening-a-modal-with-declarative-actions.mdx)
+3. How to pass variables into a modal (this article)
 
-I wrote a second tutorial on [how to make that button open a modal](opening-a-modal-with-declarative-actions.mdx).
-
-This tutorial is about passing variables into that modal. It assumes you've already completed the first two steps and you've got a button that opens a modal.
+This guide assumes you've already completed the first two steps and you've got a button that opens a modal.
 
 ## What we're going to create
 
@@ -20,14 +20,14 @@ Here's an animated gif of what we're going to create. We're simply going to pass
 
 ## Prerequisites
 
--   A Configurable Workspace which you've customized with a declarative action (e.g. a button in the UI Bar) which opens a modal. (See [this tutorial](adding-an-action-bar-button-to-a-configurable-workspace) on how to accomplish that)
--   A modal which you've hooked up to your declarative action so that when it is clicked/triggered the modal opens (See [this tutorial](/opening-modal-from-a-record-in-configurable-workspaces/) on how to accomplish that)
+-   A Configurable Workspace which you've customized with a declarative action (e.g. a button in the UI Bar) which opens a modal. (See [this tutorial](/configurable-workspaces/declarative-actions/ui-action-bar) on how to accomplish that)
+-   A modal which you've hooked up to your declarative action so that when it is clicked/triggered the modal opens (See [this tutorial](/opening-modal-from-a-record-in-configurable-workspaces.mdx) on how to accomplish that)
 
 ## Step 1: Adding the parameters to your UIB Page
 
 The modal will render a UIB Page. If you've followed the prerequisites you should already have a UIB Page which renders inside of your modal.
 
-This UIB Page will have a `sys_ux_app_route` record associated with it. It's on this record that we need to make some changes, but it be tricky to find the right record. Why? Because once we set the field `parent_macroponent_composition_element_id` to `modalContainerViewport` (which we do to make sure the modal appears in our parent macroponent) the variant may no longer show up in your list of UIB Pages/Variants.
+This UIB Page will have multiple `sys_ux_app_route` records associated with it. It's on this record that we need to make some changes.
 
 1.  **Locating the UIB Page** — Try to locate the UIB Page that renders inside the modal in UI Builder. If you're able to find it, open it and navigate to **Settings > Open Records > Variant Collection**. This should open the `sys_ux_screen_type` record. This record has a related list called "UX App Routes". There should be a UX App Route record that corresponds to your UIB Page. Open that `sys_ux_app_route` and proceed to step 3.
 
