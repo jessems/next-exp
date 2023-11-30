@@ -1,5 +1,6 @@
 {
-    "declarative-actions": "Declarative Actions",
-    "modals": "Modals",
-    "guides": "Guides"
+    "how-to-guides": "How To Guides",
+    "tutorials": "Tutorials",
+    "background-information": "Background Information",
+    "api-reference": "API Reference"
 }
