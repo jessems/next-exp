@@ -2,7 +2,8 @@
 title: Passing variables into a modal
 ---
 
-import { Steps, Callout } from 'nextra/components'
+import { Steps, Callout, Tabs } from 'nextra/components'
+import YouTube from '@components/youtube'
 
 # Passing variables into a modal
 
@@ -24,6 +25,15 @@ Here's an animated gif of what we're going to create. We're simply going to pass
 
 -   A Configurable Workspace which you've customized with a declarative action (e.g. a button in the UI Bar) which opens a modal. (See [this tutorial](/configurable-workspaces/declarative-actions/ui-action-bar) on how to accomplish that)
 -   A modal which you've hooked up to your declarative action so that when it is clicked/triggered the modal opens (See [this tutorial](/opening-modal-from-a-record-in-configurable-workspaces.mdx) on how to accomplish that)
+
+<Tabs items={['Article', '▶️ Video']}>
+  <Tabs.Tab>
+   <Callout type="info">
+   You can find the article below. If you'd like to follow along with the video, click the video tab.
+   </Callout>
+  </Tabs.Tab>
+  <Tabs.Tab><YouTube id="80027gKyXfw" /> </Tabs.Tab>
+</Tabs>
 
 ## Step 1: Adding the parameters to your UIB Page
 
