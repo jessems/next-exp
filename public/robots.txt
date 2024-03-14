@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextexp.jessems.com
+
+# Sitemaps
+Sitemap: https://nextexp.jessems.com/sitemap.xml

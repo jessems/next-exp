@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://nextexp.jessems.com</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/about</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/background-information/declarative-actions</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/background-information/modals</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/how-to-guides/passing-variables-into-modals-generic</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/tutorials/guide-adding-a-button-to-the-ui-action-bar</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/tutorials/guide-opening-a-modal-with-declarative-actions</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/configurable-workspaces/tutorials/guide-passing-variables-into-a-modal</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/custom-component-development/change-name-of-a-component</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/custom-component-development/guides/checklist</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/custom-component-development/guides/counter</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/custom-component-development/guides/setting-up-your-local-dev-environment</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/resources</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/ui-builder/debugging/log-event-client-script</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/ui-builder/defining-page-parameters</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/ui-builder/guides/remote-rest-api-request</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/ui-builder/triggering-a-data-resource-with-a-ux-client-script</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nextexp.jessems.com/ui-builder/tutorials/other-tutorials</loc><lastmod>2024-03-14T11:38:19.041Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
