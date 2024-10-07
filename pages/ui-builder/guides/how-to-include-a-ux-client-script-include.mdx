@@ -1,0 +1,26 @@
+---
+slug: how-to-include-a-ux-client-script-include
+date: '2023-10-07'
+title: 'How to include a ux client script include'
+description: ''
+tags: 'servicenow ui-builder'
+published: true
+category: 'technical'
+---
+
+The go-to way to run scripts in UI Builder, and therefor in Next Experience and Configurable workspaces, is by writing `sys_ux_client_scripts`.
+
+Sometimes you have code that you want to re-use across `sys_ux_client_scripts`. In those cases you can encapsulate that code in a `sys_ux_client_script_include` and include it in multiple `sys_ux_client_scripts`. Here's how.
+
+```js filename="sys_ux_client_script_include"
+// Scope: my_app
+return {
+    helloWorld() {
+        console.log('Hello World');
+    };
+}
+```
+
+```js filename="sys_ux_client_script"
+includes['my_app.MyScriptInclude'].helloWorld(); // Output: Hello World
+```
