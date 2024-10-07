@@ -14,13 +14,15 @@ Sometimes you have code that you want to re-use across `sys_ux_client_scripts`. 
 
 ```js filename="sys_ux_client_script_include"
 // Scope: my_app
+const helloWorld = () => {
+    console.log('Hello World');
+};
 return {
-    helloWorld() {
-        console.log('Hello World');
-    };
+    helloWorld
 }
 ```
 
 ```js filename="sys_ux_client_script"
-includes['my_app.MyScriptInclude'].helloWorld(); // Output: Hello World
+const { helloWorld } = includes['my_app.MyScriptInclude']; 
+helloWorld(); // Output: Hello World
 ```
