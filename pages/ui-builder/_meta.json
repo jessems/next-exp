@@ -1,5 +1,12 @@
 {
   "debugging": "Debugging",
-  "guides": "Guides",
+  "guides": {
+    "title": "Guides",
+    "type": "page",
+    "display": "normal",
+    "theme": {
+      "layout": "default"
+    }
+  },
   "tutorials": "Tutorials"
 }
