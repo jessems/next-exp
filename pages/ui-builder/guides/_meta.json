@@ -1,6 +1,18 @@
 {
-    "how-to-update-a-record": "How to Update a Record",
+    "how-to-update-a-record": {
+      "title": "How to Update a Record",
+      "display": "normal",
+      "theme": {
+        "layout": "default"
+      }
+    },
     "remote-rest-api-request": "Making Remote REST API Requests",
     "how-to-add-an-alert-message": "How to Add an Alert Message",
-    "how-to-include-a-ux-client-script-include": "How to Include a UX Client Script Include"
+    "how-to-include-a-ux-client-script-include": {
+      "title": "How to Include a UX Client Script Include",
+      "display": "normal",
+      "theme": {
+        "layout": "default"
+      }
+    }
   }
